@@ -14,17 +14,31 @@ public class Product {
 	private int quantity =50;
 	
 	//constructor
-	public Product( String slot, String productName , double price, String type, int quantity) {
+	public Product( String slot, String productName , double price, String type) {
 		this.slot = slot;
 		this.productName = productName;
 		this.price = price;
 		this.type = type;
-		this.quantity = quantity;
 	}
 	
+	public int Quantity(int quantity) {
+		this.quantity = quantity;
+		return quantity;
+	}
 	
+	//methods
+	public String soldOut() {
+		if (quantity == 0) {
+			return "SOLD OUT";
+		} else {
+			return Integer.toString(quantity);
+		}
+	}
 	
-	
+	//make a formatted string that has slot number, item name, price, type, and quantity (?)
+//	public String toString() {
+//		String productLog = String.format(slot, productName, price, type, soldOut());
+//	}
 
 
 
