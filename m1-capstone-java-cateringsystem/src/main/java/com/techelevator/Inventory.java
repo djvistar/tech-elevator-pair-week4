@@ -25,7 +25,7 @@ public class Inventory {
 		}
 	
 	//Need a list to return a list of all products
-		public List<Product> ListOfProducts() {
+		public List<Product> listOfProducts() {
 			List<Product> productList = new ArrayList<Product>();
 			
 			Set<String> keys = productInventory.keySet();
