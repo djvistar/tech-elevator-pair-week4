@@ -27,6 +27,12 @@ public class Product {
 	}
 	
 	//methods
+	//keeping track of product being taken out
+	public void quantityDecrease() {
+		quantity --;
+	}
+	
+	
 	public String soldOut() {
 		if (quantity == 0) {
 			return "SOLD OUT";
@@ -78,6 +84,8 @@ public class Product {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	
+	
 		
 	
 	
