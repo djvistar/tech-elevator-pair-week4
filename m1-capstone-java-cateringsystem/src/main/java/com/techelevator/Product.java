@@ -5,8 +5,7 @@ package com.techelevator;
 public class Product {
 
 	
-	
-	
+	private double balance ;
 	private String slot;
 	private String productName;
 	private double price;
@@ -85,8 +84,8 @@ public class Product {
 		this.quantity = quantity;
 	}
 	
-	
-		
-	
+	 public double getBalance() {
+	        return balance;
+	 }
 	
 }
