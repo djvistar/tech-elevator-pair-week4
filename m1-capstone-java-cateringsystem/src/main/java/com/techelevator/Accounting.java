@@ -2,24 +2,24 @@ package com.techelevator;
 
 public class Accounting {
 	
-	private int totalInCents;
-	private int totalInDollars;
+	private double totalInCents;
+	private double totalInDollars;
 	
-	public Accounting(int totalInDollars, int totalInCents) {
+	public Accounting(double totalInDollars, double totalInCents) {
 		this.totalInDollars = totalInDollars;
 		this.totalInCents = totalInCents;
 	}
 
-	public int getTotalInCents() {
+	public double getTotalInCents() {
 		return totalInCents;
 	}
 	
-	public int getTotalInDollars() {
+	public double getTotalInDollars() {
 		return totalInDollars;
 	}
 	
-	public int getCents() {
-		return (int) (totalInCents % 100);
+	public double getCents() {
+		return  (totalInCents % 100);
 	}
 	
 	
@@ -30,11 +30,11 @@ public class Accounting {
 //	}
 	
 	
-	public void returnChange(){
-		int totalCents = this.getTotalInCents();
-		int totalNickels = 0;
-		int totalDimes = 0;
-		int totalQuarters = 0;
+	public void returnCents(){
+		double totalCents = this.getTotalInCents();
+		double totalNickels = 0;
+		double totalDimes = 0;
+		double totalQuarters = 0;
 		while (totalCents > 0){
 			if (totalCents >= 25){
 				totalQuarters ++;
@@ -51,11 +51,11 @@ public class Accounting {
 	}
 	
 	public void returnDollar(){
-		int totalDollars = this.getTotalInDollars();
-		int totalOnes = 0;
-		int totalFives = 0;
-		int totalTens = 0;
-		int totalTwenties = 0;
+		double totalDollars = this.getTotalInDollars();
+		double totalOnes = 0;
+		double totalFives = 0;
+		double totalTens = 0;
+		double totalTwenties = 0;
 		while (totalDollars > 0){
 			if (totalDollars >= 20){
 				totalTwenties ++;
@@ -72,6 +72,14 @@ public class Accounting {
 			}
 		}
 	
+	}
+	
+	public double makeChange() {
+		double change =0;
+		if (totalInDollars <1) {
+			change = totalInCents;
+		}
+		return change;
 	}
 	
 	public boolean isValidDollar(String dollarToCheck) {

@@ -58,58 +58,57 @@ public class ShoppingCart {
 
 	    }
 
-	    public void displayItems() {
+	    public void displayProducts() {
 	        System.out.println();
 	        System.out.println(String.format("%-5s%-19s%10s%10s%10s", "Quantity", "	Type", "Product Name", "Single Price", "Multiple Price"));
 	        System.out.println("---------------------------------------------");
 	        for (Map.Entry<String, List<Product>> entry : productsInTheMachine.entrySet()) {
 	            if (!outOfStock(entry.getValue())) {
-	            	String productQuantity = String.valueOf(entry.getValue().size());
+	            	int productQuantity = 0;
+	            	//String productQuantity = String.valueOf(entry.getValue().size());
 	            	String productType = entry.getValue().get(0).getType();
-	            	String productNmae = entry.getValue().get(0).getProductName();
+	            	String productName = entry.getValue().get(0).getProductName();
 	            	String productPrice = "$" + entry.getValue().get(0).getPrice();
-	            	String multipleProductPrice = "$" + (entry.getValue().get(0).getPrice()* productQuantity); 
-	          //start back up from here  	 
-	                System.out.println(String.format("%-5s%-19s%10s%10s", itemSlot, itemName, itemPrice, itemCount));
+	            	String multipleProductPrice = "$" + (entry.getValue().get(0).getPrice())* productQuantity; 
+	          
+ 	 
+	                System.out.println(String.format("%-5s%-19s%10s%10s%10s", productQuantity, productType, productName, productPrice,  multipleProductPrice ));
 	            } else {
-	                String itemSlot = entry.getKey();
-	                System.out.println(String.format("%-15s%7s", itemSlot, "SOLD OUT")); //Prevents Array Out Of Bounds error
+	                String productName = entry.getKey();
+	                System.out.println(String.format("%-15s%7s", productName, "SOLD OUT")); //Prevents Array Out Of Bounds error
 	            }
 	        }
 	        System.out.println("---------------------------------------------");
 	    }
 
-	    public Map<String, List<Item>> getItemsInTheMachine() {
-	        return itemsInTheMachine;
+	    public Map<String, List<Product>> getProductsInTheMachine() {
+	        return productsInTheMachine;
 	    }
 
 
 	    public void resetBalance() {
-	        balance = new BigDecimal(0);
+	        balance = 0;
 	    }
 
 
-	    public void loadInventory() {
-	        Importer importer = new Importer();
-	        itemsInTheMachine = importer.passImportMapToVendingMachine();
-	    }
+//	    public void loadInventory() {
+//	        InventoryLoader inventoryLoader = new InventoryLoader();
+//	        productsInTheMachine = inventoryLoader.passToShoppingCart();
+//	    }
 
 	    public void returnChange() {
-	        if (balance.doubleValue() > 0) {  //Prevents message from displaying and logging if balance is 0
-	            Change change = new Change();
-	            BigDecimal changeGiven = getBalance();
+	        if (balance > 0) {  //Prevents message from displaying and logging if balance is 0
+	            Accounting accounting = new Accounting(balance, balance);
+	            double changeGiven = getBalance();
 
-	            System.out.println("\n" + change.makeChange(getBalance()));
+	            System.out.println("\n" + accounting.makeChange());
 
 	            resetBalance();
-	            logger.logChange(changeGiven, getBalance());
+	           // logger.logChange(changeGiven, getBalance());
 	        }
 	    }
 
-	    public String formattedBalanceToCurrency() {
-	        NumberFormat numberFormat = NumberFormat.getCurrencyInstance(Locale.US);
-	        return numberFormat.format(balance.doubleValue());
-	    }
+	  
 
 	}
 	
@@ -122,4 +121,4 @@ public class ShoppingCart {
 	
 	
 	
-}
+
