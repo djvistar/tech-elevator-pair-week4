@@ -15,10 +15,9 @@ public class Inventory {
 		// Only way to modify data is to go through the public methods below.
 		private Map<String, Product> productInventory;
 		
-		/**
-		 * This constructor is called when the program loads (see HomeApp class). When inventory class is created
-		 * it will load 'sample data'. Later in module 2, we will load data from a database. 
-		 */
+		
+		 //This constructor is called when the program loads. 
+		 
 		public Inventory() {
 			InventoryLoader loader = new InventoryLoader();
 	        productInventory = loader.loadInventoryFromFile();

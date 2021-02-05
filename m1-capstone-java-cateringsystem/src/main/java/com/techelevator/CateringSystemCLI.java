@@ -52,7 +52,7 @@ public class CateringSystemCLI {
     		}
     		else if (choice.equals(ORDER )) {
       		
-    		    //Agent Management
+    		   
   			
     			handleSubMenu();
    			
@@ -103,7 +103,7 @@ public class CateringSystemCLI {
     		}
     				
     } 	
-    	
+	}	
 } 	//sends us back to main menu
 	
 
@@ -121,10 +121,4 @@ public class CateringSystemCLI {
 		
 		
 		
-	}
 	
-	
-
-
-
-}
