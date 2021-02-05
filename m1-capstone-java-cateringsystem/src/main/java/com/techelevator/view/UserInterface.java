@@ -65,7 +65,7 @@ public class UserInterface{
 	
 	  /**
      * This method prints out a list of products 
-     * 
+     * @param List<Home> homesToPrint - An ArrayList containing our list of homes 
     */
 	public void printListOfProducts(List<Product> productToPrint) {
 
@@ -78,9 +78,9 @@ public class UserInterface{
 			return;
 		}
 
-		for (Product product : productToPrint) {
+		for (Product products : productToPrint) {
 			
-			printListOfProducts(product);
+			printListOfProducts(products);
 
 		}
 

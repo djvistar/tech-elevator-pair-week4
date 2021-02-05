@@ -2,27 +2,35 @@ package com.techelevator;
 
 import java.util.List;
 
+import com.techelevator.homes.HomeApp;
+import com.techelevator.homes.Menu;
 import com.techelevator.view.UserInterface;
 
 public class CateringSystemCLI {
-
-	private UserInterface ui;
-
-	public CateringSystemCLI(UserInterface ui) {
-		this.ui = ui;
-	}
-	
-	public static void main(String[] args) {
-		UserInterface menu = new UserInterface();
-		CateringSystemCLI cli = new CateringSystemCLI(menu);
-		cli.run();
-	}	
+//
+//	private UserInterface ui;
+//
+//	public CateringSystemCLI(UserInterface ui) {
+//		this.ui = ui;
+//	}
+//	
+//	public static void main(String[] args) {
+//		UserInterface menu = new UserInterface();
+//		CateringSystemCLI cli = new CateringSystemCLI(menu);
+//		cli.run();
+//	}	
 	private static final String DISPLAY_CATERING_ITEMS = "1";
 	private static final String ORDER = "2";
 	private static final String QUIT = "3";
 	
+	//private Menu menu = new Menu();
 	
 	private UserInterface menu = new UserInterface();
+	
+	public static void main(String[] args) {
+		
+		CateringSystemCLI app = new CateringSystemCLI();
+	}
 	
 	public void run() {
 	
@@ -52,7 +60,7 @@ public class CateringSystemCLI {
     		}
     		else if (choice.equals(ORDER )) {
       		
-    		   
+    		    //Agent Management
   			
     			handleSubMenu();
    			
@@ -103,7 +111,7 @@ public class CateringSystemCLI {
     		}
     				
     } 	
-	}	
+    	
 } 	//sends us back to main menu
 	
 
@@ -121,4 +129,10 @@ public class CateringSystemCLI {
 		
 		
 		
+	}
 	
+	
+
+
+
+}

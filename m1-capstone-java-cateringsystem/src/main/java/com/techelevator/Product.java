@@ -32,14 +32,14 @@ public class Product {
 		quantity --;
 	}
 	
-	
-	public String soldOut() {
-		if (quantity == 0) {
-			return "SOLD OUT";
-		} else {
-			return Integer.toString(quantity);
-		}
-	}
+//	
+//	public String soldOut() {
+//		if (quantity == 0) {
+//			return "SOLD OUT";
+//		} else {
+//			return Integer.toString(quantity);
+//		}
+//	}
 	
 	//make a formatted string that has slot number, item name, price, type, and quantity (?)
 //	public String toString() {
