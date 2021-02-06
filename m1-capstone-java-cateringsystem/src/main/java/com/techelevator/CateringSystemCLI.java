@@ -29,6 +29,7 @@ public class CateringSystemCLI {
 	public static void main(String[] args) {
 		
 		CateringSystemCLI app = new CateringSystemCLI();
+		app.run();
 	}
 	
 	public void run() {
