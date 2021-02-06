@@ -57,7 +57,7 @@ public class CateringSystemCLI {
     			menu.printListOfProducts(products);
     			
     		}
-    		else if (choice.equals(ORDER )) {
+    		else if (choice.equals(ORDER)) {
       		
     		    //Agent Management
   			
@@ -94,19 +94,19 @@ public class CateringSystemCLI {
     				
     		String subMenuChoice = menu.purchasingProcessMenu();
     			//This links to account class to check balance	
-    		if (subMenuChoice.equalsIgnoreCase("ADD_MONEY")) {
-    				System.out.println("You chose ADD_MONEY");	
+    		if (subMenuChoice.equals(ADD_MONEY)) {
+    				System.out.println("You chose ADD MONEY");	
     		}
-    		else if (subMenuChoice.equalsIgnoreCase("SELECT_PRODUCTS")) {
-    			System.out.println("You chose SELECT_PRODUCTS");	
+    		else if (subMenuChoice.equals(SELECT_PRODUCTS)) {
+    			System.out.println("You chose SELECT PRODUCTS");	
     		}
-    		else if (subMenuChoice.equalsIgnoreCase("COMPLETE_TRANSACTION")){
+    		else if (subMenuChoice.equals(COMPLETE_TRANSACTION)){
     			System.out.println("Returning to previous menu");
     			isLooping = false;
     			
     		}
     		else {
-    			System.out.println("You chose #1");	
+    			System.out.println("TRY AGAIN!!");	
     		}
     				
     } 	
