@@ -15,8 +15,7 @@ public class ShoppingCart {
 	
 
 	    private LinkedHashMap<String, List<Product>> productsInTheMachine = new LinkedHashMap<>();
-	   // private final Logger logger = new Logger();
-	  //  private final SalesReport salesReport = new SalesReport();
+	    private final TransactionReport transactionReport = new TransactionReport(null);
 	    private double balance ;
 
 	    public double getBalance() {
@@ -39,10 +38,11 @@ public class ShoppingCart {
 
 	                balance -= productPrice;
 
-//	                logger.logPurchase(slot, item, startingBalance, balance); //Log and Sales Report
-//	                salesReport.updateBalance(itemPrice);
-//	                salesReport.updateInventory(item.getName());
-//	                itemListStockCount.remove(0);
+
+			
+              transactionReport.updateBalance(productPrice);
+              transactionReport.updateInventory(product.getProductName());
+	                productListStockCount.remove(0);
 	            }
 	        }
 	    }
@@ -54,7 +54,7 @@ public class ShoppingCart {
 	    public void addMoney(double money) {
 	        balance += money;
 	        System.out.println("Inserted $" + money + " dollars.");
-	       // logger.logFeed(money, balance);
+	      
 
 	    }
 
@@ -97,14 +97,14 @@ public class ShoppingCart {
 //	    }
 
 	    public void returnChange() {
-	        if (balance > 0) {  //Prevents message from displaying and logging if balance is 0
+	        if (balance > 0) {  //Prevents message from displaying if balance is 0
 	            Accounting accounting = new Accounting(balance, balance);
 	            double changeGiven = getBalance();
 
 	            System.out.println("\n" + accounting.makeChange());
 
 	            resetBalance();
-	           // logger.logChange(changeGiven, getBalance());
+	         
 	        }
 	    }
 
