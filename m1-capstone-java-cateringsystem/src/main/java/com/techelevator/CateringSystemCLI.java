@@ -2,8 +2,6 @@ package com.techelevator;
 
 import java.util.List;
 
-import com.techelevator.homes.HomeApp;
-import com.techelevator.homes.Menu;
 import com.techelevator.view.UserInterface;
 
 public class CateringSystemCLI {
