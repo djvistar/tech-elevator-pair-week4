@@ -2,6 +2,9 @@ package com.techelevator;
 
 import java.util.List;
 
+import com.techelevator.product.Product;
+import com.techelevator.shoppingCart.Inventory1;
+import com.techelevator.shoppingCart.TransactionReport;
 import com.techelevator.view.UserInterface;
 
 public class CateringSystemCLI {
@@ -37,7 +40,7 @@ public class CateringSystemCLI {
 
 		
 		
-		Inventory productInventory = new Inventory();
+		Inventory1 productInventory = new Inventory1();
     	TransactionReport report = new TransactionReport("receipt.txt");
     	
     	//this is a boolean value to keep the program running unless user enters exit.
@@ -95,6 +98,7 @@ public class CateringSystemCLI {
     		String subMenuChoice = menu.purchasingProcessMenu();
     			//This links to account class to check balance	
     		if (subMenuChoice.equals(ADD_MONEY)) {
+    			
     				System.out.println("You chose ADD MONEY");	
     		}
     		else if (subMenuChoice.equals(SELECT_PRODUCTS)) {

@@ -1,10 +1,11 @@
 package com.techelevator.view;
 
 import java.util.List;
+
 import java.util.Scanner;
 
-import com.techelevator.Product;
 
+import com.techelevator.product.*;
 
 public class UserInterface{
 
@@ -80,7 +81,7 @@ public class UserInterface{
 
 		for (Product products : productToPrint) {
 			
-			printProducts(products);
+			printListOfProducts(productToPrint);
 
 		}
 
@@ -90,32 +91,17 @@ public class UserInterface{
 	 * This method prints out the product.  We 'could' have put this up in the for each loop above, but breaking
 	 * it out on it's own keeps the code above cleaner AND we can also reuse when printing out from menu option 2 
 	 */
-	public void printProducts(Product product) {
-		
-		System.out.println("Slot Number: " + product.getSlot());
-		System.out.println("Product Name: " + product.getProductName());
-		System.out.println("Product Price: " + product.getPrice());
-		System.out.println("Product Type: " + product.getType());
-		
-		System.out.println("\n*********** *** *** ***  ************\n");
-
-//		if (home.getAddress() != null) {
-//			System.out.println("Street Address: " + home.getAddress().getStreetNumber() + " "
-//					+ home.getAddress().getStreetName() + " " + home.getAddress().getCity() + " "
-//					+ home.getAddress().getState() + " " + home.getAddress().getZipCode() + "\n");
-//		}
+//	public void printProducts(Product product) {
 //		
-//		System.out.println(String.format("%-25s %s", "Bedrooms: ", home.getNumberOfBedrooms()));
-//		System.out.println(String.format("%-25s %s", "Bathrooms: ", home.getNumberOfBathrooms()));
-//		System.out.println(String.format("%-25s %s", "Description: ", home.getShortDescription()));
-//		System.out.println(String.format("%-25s $%s", "Price: ", String.format("%.2f", home.getPrice())));
-		
+//		System.out.println("Slot Number: " + product.getSlot());
+//		System.out.println("Product Name: " + product.getProductName());
+//		System.out.println("Product Price: " + product.getPrice());
+//		System.out.println("Product Type: " + product.getType());
+//		
+//		System.out.println("\n*********** *** *** ***  ************\n");
+
+	
 				
-		
-	}
-	
-	
-	
-	
+
 	
 }
